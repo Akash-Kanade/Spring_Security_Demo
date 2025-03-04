@@ -1,7 +1,11 @@
-package com.security.entity.repository;
+package com.security.repository;
 
-import com.security.entity.User;
+import com.security.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<Users, Integer> {
+
+    Optional<Users> findByUserName(String userName);
 }
